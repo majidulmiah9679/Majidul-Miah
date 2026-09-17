@@ -1,0 +1,75 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Outer Arc Reactor Ring -->
+    <path
+        android:pathData="M54,26 A28,28 0 1,0 54,82 A28,28 0 1,0 54,26"
+        android:strokeWidth="2.5"
+        android:strokeColor="#00E5FF"
+        android:fillColor="#00000000" />
+
+    <!-- 8 Arc Segments / Energy Nodes -->
+    <path
+        android:pathData="M54,22 L54,27"
+        android:strokeWidth="3"
+        android:strokeColor="#80D8FF" />
+    <path
+        android:pathData="M54,81 L54,86"
+        android:strokeWidth="3"
+        android:strokeColor="#80D8FF" />
+    <path
+        android:pathData="M22,54 L27,54"
+        android:strokeWidth="3"
+        android:strokeColor="#80D8FF" />
+    <path
+        android:pathData="M81,54 L86,54"
+        android:strokeWidth="3"
+        android:strokeColor="#80D8FF" />
+    <path
+        android:pathData="M31.4,31.4 L35,35"
+        android:strokeWidth="3"
+        android:strokeColor="#80D8FF" />
+    <path
+        android:pathData="M73,73 L76.6,76.6"
+        android:strokeWidth="3"
+        android:strokeColor="#80D8FF" />
+    <path
+        android:pathData="M76.6,31.4 L73,35"
+        android:strokeWidth="3"
+        android:strokeColor="#80D8FF" />
+    <path
+        android:pathData="M35,73 L31.4,76.6"
+        android:strokeWidth="3"
+        android:strokeColor="#80D8FF" />
+
+    <!-- Middle Segmented Ring -->
+    <path
+        android:pathData="M54,34 A20,20 0 1,0 54,74 A20,20 0 1,0 54,34"
+        android:strokeWidth="1.8"
+        android:strokeColor="#00B0FF"
+        android:fillColor="#00000000" />
+
+    <!-- Inner Core Triangular/Hexagonal Geometry -->
+    <path
+        android:pathData="M54,40 L66,61 L42,61 Z"
+        android:strokeWidth="2"
+        android:strokeColor="#00E5FF"
+        android:fillColor="#1500E5FF" />
+
+    <path
+        android:pathData="M54,68 L42,47 L66,47 Z"
+        android:strokeWidth="1"
+        android:strokeColor="#80D8FF"
+        android:fillColor="#00000000" />
+
+    <!-- Central Glowing Energy Nucleus -->
+    <path
+        android:pathData="M54,49 A5,5 0 1,0 54,59 A5,5 0 1,0 54,49"
+        android:fillColor="#FFFFFF" />
+    <path
+        android:pathData="M54,51 A3,3 0 1,0 54,57 A3,3 0 1,0 54,51"
+        android:fillColor="#00E5FF" />
+</vector>

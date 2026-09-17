@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1117"
+    android:padding="16dp">
+
+    <!-- Header Title -->
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JARVIS OS"
+        android:textColor="#58A6FF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tvSubHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tactical Autonomous Assistant"
+        android:textColor="#8B949E"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+    <!-- Live System Telemetry Badge -->
+    <TextView
+        android:id="@+id/tvSystemTelemetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#161B22"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="BAT: --% | RAM: --"
+        android:textColor="#58A6FF"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- API Key Input Section -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilApiKey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColorHint="#8B949E"
+        app:boxStrokeColor="#58A6FF"
+        app:hintTextColor="#58A6FF"
+        app:layout_constraintEnd_toStartOf="@id/btnValidateKey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubHeader">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etApiKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Gemini API Key"
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnValidateKey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="#238636"
+        android:text="Save"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/tilApiKey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tilApiKey"
+        app:layout_constraintTop_toTopOf="@id/tilApiKey" />
+
+    <!-- API Status Bar with Dynamic Red/Green Indicator -->
+    <LinearLayout
+        android:id="@+id/layoutStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tilApiKey">
+
+        <View
+            android:id="@+id/viewStatusDot"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@android:color/holo_red_dark" />
+
+        <TextView
+            android:id="@+id/tvStatusMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="API Key Not Configured (Red)"
+            android:textColor="#F85149"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Real System Permissions & Settings Controls -->
+    <LinearLayout
+        android:id="@+id/layoutButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/layoutStatus">
+
+        <Button
+            android:id="@+id/btnAccessibility"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="#21262D"
+            android:text="Accessibility"
+            android:textColor="#58A6FF"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnNotification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:layout_weight="1"
+            android:backgroundTint="#21262D"
+            android:text="Notification"
+            android:textColor="#58A6FF"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnOverlayPermission"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="#21262D"
+            android:text="Overlay (HUD)"
+            android:textColor="#58A6FF"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Quick Action Utilities (Lock, Home, Refresh Diagnostics) -->
+    <LinearLayout
+        android:id="@+id/layoutQuickActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/layoutButtons">
+
+        <Button
+            android:id="@+id/btnQuickHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="#161B22"
+            android:text="⌂ Home"
+            android:textColor="#7EE787"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnQuickLock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:layout_weight="1"
+            android:backgroundTint="#161B22"
+            android:text="🔒 Lock"
+            android:textColor="#F85149"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnBatteryOptimization"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="#161B22"
+            android:text="⚡ Battery Opt"
+            android:textColor="#E3B341"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Response Display Screen -->
+    <ScrollView
+        android:id="@+id/scrollResponse"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="#161B22"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btnVoiceCommand"
+        app:layout_constraintTop_toBottomOf="@id/layoutQuickActions">
+
+        <TextView
+            android:id="@+id/tvTerminalOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="Yes Boss, JARVIS is online. Speak or tap mic to initiate systems."
+            android:textColor="#7EE787"
+            android:textSize="14sp" />
+    </ScrollView>
+
+    <!-- Interactive Glowing Voice Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnVoiceCommand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#58A6FF"
+        android:contentDescription="Voice Action"
+        android:src="@android:drawable/ic_btn_speak_now"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="#0D1117" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

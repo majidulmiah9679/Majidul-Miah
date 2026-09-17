@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Jarvis Assistant</string>
+    <string name="accessibility_service_description">JARVIS Neural Automation and UI accessibility coordinator.</string>
+    <string name="accessibility_desc">JARVIS Neural Automation and UI accessibility coordinator.</string>
+</resources>

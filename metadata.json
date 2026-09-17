@@ -1,0 +1,6 @@
+{
+  "name": "Jarvis Assistant",
+  "description": "AI Voice & Task Assistant powered by Gemini Flash with webhook triggers, smart tools, and real-time conversation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
